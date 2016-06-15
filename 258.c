@@ -1,26 +1,15 @@
-int addDigits(int num)
-{
-    int ans = num;
-    int temp = 0;
-
-    while(ans>=10)
+int addDigits(int num) {
+    if(num<10)
     {
-        temp++;
-        ans = ans/10;
-    }
-
-    if(temp==0)
-    {
-        return ans;
+        return num;
     }
 
     int sum=0;
-
-    for(;temp>=0;temp--)
+    while(num>0)
     {
         sum += num%10;
         num = num/10;
     }
-
     return addDigits(sum);
+    
 }
